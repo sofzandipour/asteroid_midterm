@@ -31,12 +31,16 @@ print(impacts3)
 impacts4 <- filter(impacts3, palermo >-4.0)
   
 ggplot(data=impacts4)+
-  geom_point(mapping=aes(x="magnitude", y="possible_impacts"))
+  geom_jitter(mapping=aes(x="magnitude", y="possible_impacts"))
 ```
 
 ```{r}
 ggplot(data=impacts3)+
   geom_histogram(mapping=aes(x=possible_impacts)) + 
   coord_cartesian(xlim = c(600, 1200), ylim = c(0, 10))
+```
+```{r}
+ggplot(data=impacts3)+
+  geom_jitter(mapping=aes(x="diameter", y="velocity"))
 ```
 
