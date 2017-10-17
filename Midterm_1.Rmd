@@ -34,3 +34,9 @@ ggplot(data=impacts4)+
   geom_point(mapping=aes(x="magnitude", y="possible_impacts"))
 ```
 
+```{r}
+ggplot(data=impacts3)+
+  geom_histogram(mapping=aes(x=possible_impacts)) + 
+  coord_cartesian(xlim = c(600, 1200), ylim = c(0, 10))
+```
+
