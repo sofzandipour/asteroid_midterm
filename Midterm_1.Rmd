@@ -1,0 +1,22 @@
+---
+title: "Midterm Project"
+author: "Sofia Zandipour"
+date: "October 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+impacts <- read_csv("impacts.csv")
+```
+
+
+##Renamed Variables##
+```{r}
+impacts2 <- rename(impacts, name = "Object Name", start = "Period Start", end = "Period End", possible_impacts = "Possible Impacts", impact_prob = "Cumulative Impact Probability", velocity = "Asteroid Velocity", magnitude = "Asteroid Magnitude", diameter = "Asteroid Diameter (km)", palermo = "Cumulative Palermo Scale", max_palermo = "Maximum Palermo Scale", torino = "Maximum Torino Scale")
+print(impacts2)
+```
+
