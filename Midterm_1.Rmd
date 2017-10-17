@@ -26,3 +26,10 @@ impact3 <- select(impacts2, -max_palermo, -torino)
 print(impact3)
 ```
 
+```{r}
+impacts4 <- filter(impact3, palermo >-4.0)
+  
+ggplot(data=impacts4)+
+  geom_point(mapping=aes(x="magnitude", y="possible_impacts"))
+```
+
