@@ -46,3 +46,7 @@ ggplot(data=impacts3)+
   geom_jitter(mapping=aes(x=diameter, y=velocity))
 ```
 
+```{r}
+arrange(impacts3, desc(possible_impacts))
+```
+
