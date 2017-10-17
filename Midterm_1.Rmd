@@ -41,8 +41,11 @@ ggplot(data=impacts3)+
   geom_histogram(mapping=aes(x=possible_impacts), bins=100) + 
   coord_cartesian(xlim = c(600, 1200), ylim = c(0, 2))
 ```
+
+
+####Does the total year range being observed have any effect on the positive simulations?
 ```{r}
-ggplot(data=impacts3)+
-  geom_jitter(mapping=aes(x=diameter, y=velocity))
+ggplot(data = impacts3) +
+  geom_point(mapping = aes(x = year_range, y = possible_impacts))
 ```
 
