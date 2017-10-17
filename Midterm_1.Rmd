@@ -14,15 +14,15 @@ impacts <- read_csv("impacts.csv")
 ```
 
 
-##Renamed Variables##
+##Tidying Data##
 ```{r}
-impacts2 <- rename(impacts, name = "Object Name", start = "Period Start", end = "Period End", possible_impacts = "Possible Impacts", impact_prob = "Cumulative Impact Probability", velocity = "Asteroid Velocity", magnitude = "Asteroid Magnitude", diameter = "Asteroid Diameter (km)", palermo = "Cumulative Palermo Scale", max_palermo = "Maximum Palermo Scale", torino = "Maximum Torino Scale")
+impacts2 <- rename(impacts, name = "Object Name", start = "Period Start", end = "Period End", possible_impacts = "Possible Impacts", impact_prob = "Cumulative Impact Probability", velocity = "Asteroid Velocity", magnitude = "Asteroid Magnitude", diameter = "Asteroid Diameter (km)", palermo = "Cumulative Palermo Scale", max_palermo = "Maximum Palermo Scale", torino = "Maximum Torino Scale") %>%
 print(impacts2)
 ```
 
-##Getting Rid of Unnecessary Variables##
 ```{r}
-impacts3 <- select(impacts2, -max_palermo, -torino)
+impacts3 <- select(impacts2, -max_palermo, -torino) %>%
+  mutate(year_range = end - start)
 print(impacts3)
 ```
 
