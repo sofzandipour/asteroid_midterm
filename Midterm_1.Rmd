@@ -20,3 +20,9 @@ impacts2 <- rename(impacts, name = "Object Name", start = "Period Start", end = 
 print(impacts2)
 ```
 
+##Getting Rid of Unnecessary Variables##
+```{r}
+impact3 <- select(impacts2, -max_palermo, -torino)
+print(impact3)
+```
+
