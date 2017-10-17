@@ -21,7 +21,7 @@ print(impacts2)
 ```
 
 ```{r}
-impacts3 <- select(impacts2, -max_palermo, -torino) %>%
+impacts3 <- select(impacts2, -impact_prob, -max_palermo, -torino) %>%
   mutate(year_range = end - start)
 print(impacts3)
 ```
@@ -38,7 +38,7 @@ ggplot(data=impacts4)+
 
 ```{r}
 ggplot(data=impacts3)+
-  geom_histogram(mapping=aes(x=possible_impacts), legend=TRUE, bins=100) + 
+  geom_histogram(mapping=aes(x=possible_impacts), bins=100) + 
   coord_cartesian(xlim = c(600, 1200), ylim = c(0, 2))
 ```
 ```{r}
