@@ -21,7 +21,7 @@ print(impacts2)
 ```
 
 ```{r}
-impacts3 <- select(impacts2, -max_palermo, -torino) %>%
+impacts3 <- select(impacts2, -impact_prob, -max_palermo, -torino) %>%
   mutate(year_range = end - start)
 print(impacts3)
 ```
