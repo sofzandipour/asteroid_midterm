@@ -13,6 +13,17 @@ library(tidyr)
 impacts <- read_csv("impacts.csv")
 ```
 
+##Introduction##
+
+  The data set that we are using is the impact risk data set that was collected by NASA's Near Earth Object program at the Jet Propulsion Laboratory (California’s Institute of Technology).  The data table summarizes by using asteroids (called objects in the data set) to see the potential future Earth impact events. The Jet Propulsion Laboratory uses Sentry system which is a highly automated collision monitoring system that continually scans the most current asteroid catalog. The data set contains all of the Sentry system’s list of the possible asteroid impacts with Earth. Therefore, with the use of the Sentry system we can find the possibilities of future impact with Earth over the next 100 years. The data set was download from by NASA's Near Earth Object program at the Jet Propulsion Laboratory (California’s Institute of Technology) via Kaggle. 
+
+This analysis is designed to show an analysis of potential future Earth impacts. More specifically, the data analysis will answer the following questions:
+
+1.	Which objects/asteroids are most likely to hit the earth? 
+2.	
+
+
+
 
 ##Tidying Data##
 ```{r}
