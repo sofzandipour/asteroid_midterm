@@ -91,6 +91,9 @@ ggplot(data=impacts3)+
 
 ```{r}
 ggplot(data=impacts3)+
-  geom_histogram(mapping=aes(x=possible_impacts), bins=100)
+  geom_histogram(mapping=aes(x=possible_impacts), bins=100)+
+  labs(title = "Frequency of Possible Impacts",
+       x = "Possible Impacts",
+       y = "Count")
 ```
 
