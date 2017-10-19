@@ -44,20 +44,29 @@ print(impacts3)
 impacts4 <- filter(impacts3, palermo >-4.0)
   
 ggplot(data=impacts4)+
-  geom_jitter(mapping=aes(x=magnitude, y=possible_impacts, color=name))
+  geom_jitter(mapping=aes(x=magnitude, y=possible_impacts, color=name)) +
+  labs(title = "Relationship Between Magnitude of the Asteroid and Possible Impacts",
+       x = "Magnitude",
+       y = "Possible Impacts")
 ```
 
 ```{r}
 ggplot(data=impacts3)+
   geom_histogram(mapping=aes(x=possible_impacts), bins=100) + 
-  coord_cartesian(xlim = c(600, 1200), ylim = c(0, 2))
+  coord_cartesian(xlim = c(600, 1200), ylim = c(0, 2)) +
+  labs(title = "Frequency of Possible Impacts: Zoomed In",
+       x = "Possible Impacts",
+       y = "Count")
 ```
 
 
 ####Does the total year range being observed have any effect on the positive simulations?
 ```{r}
 ggplot(data = impacts3) +
-  geom_point(mapping = aes(x = year_range, y = possible_impacts))
+  geom_point(mapping = aes(x = year_range, y = possible_impacts)) +
+  labs(title = "Relationship Between Year Range and Successful Simulations",
+       x = "Year Range",
+       y = "Possible Impacts")
 ```
 
 ```{r}
