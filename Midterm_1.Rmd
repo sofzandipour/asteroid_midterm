@@ -40,6 +40,26 @@ print(impacts3)
 
 ##Data Analysis##
 
+####Does the total year range being observed have any effect on the positive simulations?####
+```{r}
+ggplot(data = impacts3) +
+  geom_point(mapping = aes(x = year_range, y = possible_impacts)) +
+  labs(title = "Relationship Between Year Range and Successful Simulations",
+       x = "Year Range",
+       y = "Possible Impacts")
+```
+
+####Do asteroids with higher velocities pose a higher risk?
+```{r}
+ggplot(data = impacts3) +
+  geom_point(mapping = aes(x = velocity, y = palermo)) +
+  labs(title = "Relationship Between Velocity and Potential Hazard",
+       x = "Velocity",
+       y = "Palermo Scale") +
+  geom_hline(yintercept = -4, color = "red", size = 2)
+```
+
+
 ####Which objects/asteroid are most likely to hit Earth?"
 ```{r}
 impacts4 <- filter(impacts3, palermo >-4.0)
@@ -52,6 +72,26 @@ ggplot(data=impacts4)+
 ```
 
 ```{r}
+arrange(impacts3, desc(possible_impacts))
+```
+
+```{r}
+ggplot(data=impacts3)+
+  geom_histogram(mapping=aes(x=possible_impacts)) +
+    labs(title = "Frequency of Possible Impacts",
+       x = "Possible Impacts",
+       y = "Count")
+```
+
+```{r}
+ggplot(data=impacts3)+
+  geom_histogram(mapping=aes(x=possible_impacts), bins=100)+
+  labs(title = "Frequency of Possible Impacts: Changed Bin Size",
+       x = "Possible Impacts",
+       y = "Count")
+```
+
+```{r}
 ggplot(data=impacts3)+
   geom_histogram(mapping=aes(x=possible_impacts), bins=100) + 
   coord_cartesian(xlim = c(600, 1200), ylim = c(0, 2)) +
@@ -59,41 +99,3 @@ ggplot(data=impacts3)+
        x = "Possible Impacts",
        y = "Count")
 ```
-
-
-####Does the total year range being observed have any effect on the positive simulations?####
-```{r}
-ggplot(data = impacts3) +
-  geom_point(mapping = aes(x = year_range, y = possible_impacts)) +
-  labs(title = "Relationship Between Year Range and Successful Simulations",
-       x = "Year Range",
-       y = "Possible Impacts")
-```
-
-```{r}
-arrange(impacts3, desc(possible_impacts))
-```
-
-
-####Do asteroids with higher velocities pose a higher risk?
-```{r}
-ggplot(data = impacts3) +
-  geom_point(mapping = aes(x = velocity, y = palermo)) +
-  labs(title = "Relationship Between Velocity and Potential Hazard",
-       x = "Velocity",
-       y = "Palermo Scale")
-```
-
-```{r}
-ggplot(data=impacts3)+
-  geom_histogram(mapping=aes(x=possible_impacts))
-```
-
-```{r}
-ggplot(data=impacts3)+
-  geom_histogram(mapping=aes(x=possible_impacts), bins=100)+
-  labs(title = "Frequency of Possible Impacts",
-       x = "Possible Impacts",
-       y = "Count")
-```
-
