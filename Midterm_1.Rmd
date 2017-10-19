@@ -83,3 +83,13 @@ ggplot(data = impacts3) +
        y = "Palermo Scale")
 ```
 
+```{r}
+ggplot(data=impacts3)+
+  geom_histogram(mapping=aes(x=possible_impacts))
+```
+
+```{r}
+ggplot(data=impacts3)+
+  geom_histogram(mapping=aes(x=possible_impacts), bins=100)
+```
+
