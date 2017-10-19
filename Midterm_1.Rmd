@@ -19,10 +19,10 @@ impacts <- read_csv("impacts.csv")
 
 This analysis is designed to show an analysis of potential future Earth impacts. More specifically, the data analysis will answer the following questions:
 
-1.	Which objects/asteroids are most likely to hit the earth? 
-2.	Does the total year range being observed have any effect on the positive simulations?
-3.  Do asteroids with higher velocities pose a higher risk?
 
+1.	Does the total year range being observed have any effect on the positive simulations?
+2.  Do asteroids with higher velocities pose a higher risk?
+3.	Which objects/asteroids are most likely to hit the earth? 
 
 
 
