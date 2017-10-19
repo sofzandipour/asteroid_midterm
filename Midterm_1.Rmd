@@ -73,3 +73,13 @@ ggplot(data = impacts3) +
 arrange(impacts3, desc(possible_impacts))
 ```
 
+
+####Do asteroids with higher velocities pose a higher risk?
+```{r}
+ggplot(data = impacts3) +
+  geom_point(mapping = aes(x = velocity, y = palermo)) +
+  labs(title = "Relationship Between Velocity and Potential Hazard",
+       x = "Velocity",
+       y = "Palermo Scale")
+```
+
